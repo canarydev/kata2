@@ -1,4 +1,5 @@
 package Kata2;
+
 public class HistogramBuilder {
     
     public static Histogram build(String[] values) {
@@ -13,6 +14,15 @@ public class HistogramBuilder {
         Histogram histogram = new Histogram();
         for (Integer value : values) {
             histogram.incrementCountFor(value);
+        }
+        return histogram;
+    }
+    
+    public static Histogram build(Mail[] values) {
+        Histogram histogram = new Histogram();
+        
+        for (Mail value : values) {
+            histogram.incrementCountFor(value.domain);
         }
         return histogram;
     }
