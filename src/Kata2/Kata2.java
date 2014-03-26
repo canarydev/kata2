@@ -8,8 +8,7 @@ public class Kata2 {
         String[] mailstring = {"canary@gmail.com","joshua@alumno.ulpgc.es",
             "pedro@gmail.com","caballero@dis.ulpgc.es","billgates@hotmail.com",
             "vito@mafia.it","santino@mafia.it","jugon@gamer.com"};
-        Mail[] mail = new Mail[mailstring.length];
-        mail = VectorMailBuilder.build(mailstring);
+        Mail[] mail= VectorMailBuilder.build(mailstring);
         Histogram<String> histogram = HistogramBuilder.build(array);
         Histogram<Integer> histogram2 = HistogramBuilder.build(vector);
         Histogram<String> histogram3 = HistogramBuilder.build(DomainString(mail));
