@@ -1,4 +1,4 @@
-package Mail;
+package Kata2;
 
 public class Mail {
     String user;
@@ -7,14 +7,6 @@ public class Mail {
     public Mail(String mail){
         setUser(mail);     
         setDomain(mail);
-    }
-    
-    public Mail[] VectorMail(String[] mail){
-        Mail[] email = new Mail [mail.length];
-        for (int i = 0; i < mail.length; i++) {
-            email[i]= new Mail(mail[i]);
-        }
-        return email;
     }
 
     public String getUser() {

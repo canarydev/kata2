@@ -1,7 +1,5 @@
 package Kata2;
 
-import Mail.Mail;
-
 public class Kata2 {
 
     public static void main(String[] args) {
@@ -11,9 +9,7 @@ public class Kata2 {
             "pedro@gmail.com","caballero@dis.ulpgc.es","billgates@hotmail.com",
             "vito@mafia.it","santino@mafia.it","jugon@gamer.com"};
         Mail[] mail = new Mail[mailstring.length];
-        for (int i = 0; i < mail.length; i++) {
-            mail[i] = new Mail(mailstring[i]);   
-        }
+        mail = VectorMailBuilder.build(mailstring);
         Histogram<String> histogram = HistogramBuilder.build(array);
         Histogram<Integer> histogram2 = HistogramBuilder.build(vector);
         Histogram<String> histogram3 = HistogramBuilder.build(DomainString(mail));
