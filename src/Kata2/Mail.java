@@ -16,5 +16,15 @@ public class Mail {
     public String getDomain() {
         return domain;
     }
-
+    
+    /*
+    public static String[] DomainString (Mail[] mail){
+        String[] mailstring = new String[mail.length];
+        for (int i = 0; i < mail.length; i++) {
+            mailstring[i] = mail[i].getDomain();
+        }
+        return mailstring;
+    }
+     */
+    
 }
