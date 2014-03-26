@@ -1,28 +1,20 @@
 package Kata2;
 
 public class Mail {
-    String user;
-    String domain;   
+    private String user;
+    private String domain;   
     
     public Mail(String mail){
-        setUser(mail);     
-        setDomain(mail);
+        user = mail.split("@")[0];
+        domain = mail.split("@")[1];
     }
 
     public String getUser() {
         return user;
     }
     
-    private void setUser(String mailstring) {
-        user = mailstring.substring(0,mailstring.indexOf("@"));
-    }
-
     public String getDomain() {
         return domain;
     }
 
-    private void setDomain(String mailstring) {
-        domain = mailstring.substring(mailstring.indexOf("@")+1);
-    }
-    
 }

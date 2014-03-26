@@ -16,16 +16,13 @@ public class Histogram<Type> {
         map.put(entry, getCount(entry) + 1);
     }
     
-
     public Set<Type> getEntries() {
         return map.keySet();
     }
     
     public int getCount(Type entry) {
         Integer count = map.get(entry);
-        if (count == null) {
-            return 0;
-        }
+        if (count == null) return 0;
         return count;
     }
     
