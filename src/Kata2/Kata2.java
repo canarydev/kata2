@@ -1,6 +1,6 @@
 package Kata2;
 
-import java.util.Iterator;
+import Mail.Mail;
 
 public class Kata2 {
 
@@ -10,14 +10,14 @@ public class Kata2 {
         String[] mailstring = {"canary@gmail.com","joshua@alumno.ulpgc.es",
             "pedro@gmail.com","caballero@dis.ulpgc.es","billgates@hotmail.com",
             "vito@mafia.it","santino@mafia.it","jugon@gamer.com"};
-        Mail[] mail = Mail.StringToMail(mailstring);
-        Mail.Mailcounter(mail);
-        Mail email;
-        email = Mail.StringToMail("hola@gmail.com");
-        System.out.println(Mail.getUser(email)+"@"+ Mail.getDomain(email));
+        Mail[] mail = new Mail[mailstring.length];
+        for (int i = 0; i < mail.length; i++) {
+            mail[i] = new Mail(mailstring[i]);   
+        }
         Histogram<String> histogram = HistogramBuilder.build(array);
         Histogram<Integer> histogram2 = HistogramBuilder.build(vector);
-        Histogram<Mail> histogram3 = HistogramBuilder.build(mail);
+        Histogram<String> histogram3 = HistogramBuilder.build(DomainString(mail));
+        System.out.println("");
         System.out.println("Histogram for Strings:");
         for (String word : histogram.getEntries()) {
             System.out.println(word + ":" + histogram.getCount(word));
@@ -29,8 +29,16 @@ public class Kata2 {
         }
         System.out.println("");
         System.out.println("Histogram for E-mails");
-        for (Mail email : histogram3.getEntries()) {
-            System.out.println(Mail.getDomain(email) + ":" + histogram3.getCount(email));
+        for (String email : histogram3.getEntries()) {
+            System.out.println(email + ":" + histogram3.getCount(email));
         }
+    }
+    
+        public static String[] DomainString (Mail[] mail){
+        String[] mailstring = new String[mail.length];
+        for (int i = 0; i < mail.length; i++) {
+            mailstring[i] = mail[i].getDomain();
+        }
+        return mailstring;
     }
 }
